@@ -15,29 +15,6 @@ import static data.DataGenerator.getRandomLogin;
 import static data.DataGenerator.getRandomPassword;
 
 public class AuthTest {
-    // private WebDriver driver;
-
-    //@BeforeAll
-    // static void setUpAll() {
-    //   WebDriverManager.chromedriver().setup();
-    // }
-
-
-    // @BeforeEach
-    // void setUp() {
-    //  ChromeOptions options = new ChromeOptions();
-    //   options.addArguments("--disable-dev-shm-usage");
-    //   options.addArguments("--no-sandbox");
-    // options.addArguments("--headless");
-    // driver = new ChromeDriver(options);
-    //  driver.get("http://localhost:8080");
-    //  }
-
-    // @AfterEach
-    // void tearDown() {
-    //   driver.quit();
-    //   driver = null;
-    // }
 
     @BeforeEach
     void setup() {

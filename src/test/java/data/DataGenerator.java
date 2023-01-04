@@ -50,6 +50,7 @@ public class DataGenerator {
 
         public static RegistrationDto getUser(String status) {
             var user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
+            sendRequest(user);
             return user;
         }
 
@@ -58,6 +59,7 @@ public class DataGenerator {
             return registeredUser;
         }
     }
+
 
     @Value
     public static class RegistrationDto {

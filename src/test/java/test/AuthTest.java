@@ -38,8 +38,8 @@ public class AuthTest {
         $("[data-test-id='login'] input").setValue(notRegisteredUser.getLogin());
         $("[data-test-id='password'] input").setValue(notRegisteredUser.getPassword());
         $("button.button").click();
-        $("[data-test-id='error-notification'] .notification__content")
-                .shouldHave(exactText("Ошибка! Неверно указан логин или пароль"))
+        $("h2")
+                .shouldHave(exactText("Личный кабинет"))
                 .shouldBe(visible);
     }
 

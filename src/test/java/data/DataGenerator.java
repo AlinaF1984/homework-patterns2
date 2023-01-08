@@ -5,7 +5,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import lombok.*;
+import lombok.Value;
 
 import java.util.Locale;
 
@@ -48,18 +48,12 @@ public class DataGenerator {
         private Registration() {
         }
 
-        public static RegistrationDto getUser(String status) {
-            var user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
+        public static RegistrationDto generateUser(String status) {
+            RegistrationDto user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
             sendRequest(user);
             return user;
         }
-
-        public static RegistrationDto getRegisteredUser(String status) {
-            var registeredUser = getUser(status);
-            return registeredUser;
-        }
     }
-
 
     @Value
     public static class RegistrationDto {

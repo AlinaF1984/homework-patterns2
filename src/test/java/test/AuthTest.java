@@ -34,11 +34,11 @@ public class AuthTest {
     @DisplayName("Should get error message if login with not registered user")
     void shouldGetErrorIfNotRegisteredUser() {
         var notRegisteredUser = generateUser("active");
-        $("[data-test-id='login'] input").setValue(notRegisteredUser.getLogin());
-        $("[data-test-id='password'] input").setValue(notRegisteredUser.getPassword());
+        $("[data-test-id='login'] input").setValue("wronguser");
+        $("[data-test-id='password'] input").setValue("wrongpassword");
         $("button.button").click();
-        $("h2")
-                .shouldHave(exactText("Личный кабинет"))
+        $("[data-test-id='error-notification'] .notification__content")
+                .shouldHave(exactText("Ошибка! Неверно указан логин или пароль"))
                 .shouldBe(visible);
     }
 

@@ -48,10 +48,14 @@ public class DataGenerator {
         private Registration() {
         }
 
-        public static RegistrationDto generateUser(String status) {
-            RegistrationDto user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
-            sendRequest(user);
+        public static RegistrationDto getUser(String status) {
+            var user=new RegistrationDto(getRandomLogin(),getRandomPassword(),status);
             return user;
+        }
+        public static RegistrationDto getRegisteredUser(String status) {
+            var registeredUser=getUser(status);
+            sendRequest(registeredUser);
+            return registeredUser;
         }
     }
 
